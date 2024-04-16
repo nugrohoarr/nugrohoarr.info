@@ -22,10 +22,10 @@ export default function ProjectsSnip() {
     return (
         <div className="md:px-20 lg:px-32 px-5">
             <div className="flex flex-wrap gap-2 mb-6 px-6 items-center justify-center">
+                <Button onClick={handleFilter} variant={cate != "expressjs" ? "secondary" : ""} size="sm" className="rounded-full text-xs">expressjs</Button>
+                <Button onClick={handleFilter} variant={cate != "nestjs" ? "secondary" : ""} size="sm" className="rounded-full text-xs">nestjs</Button>
+                <Button onClick={handleFilter} variant={cate != "google cloud platform" ? "secondary" : ""} size="sm" className="rounded-full text-xs">google cloud platform</Button>
                 <Button onClick={handleFilter} variant={cate != "reactjs" ? "secondary" : ""} size="sm" className="rounded-full text-xs">reactjs</Button>
-                <Button onClick={handleFilter} variant={cate != "nextjs" ? "secondary" : ""} size="sm" className="rounded-full text-xs">nextjs</Button>
-                <Button onClick={handleFilter} variant={cate != "html/css" ? "secondary" : ""} size="sm" className="rounded-full text-xs">html/css</Button>
-                <Button onClick={handleFilter} variant={cate != "module" ? "secondary" : ""} size="sm" className="rounded-full text-xs">module</Button>
             </div>
             <div className='flex flex-wrap mb-10 gap-5 items-center justify-center'>
                 {!cate ?
