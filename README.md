@@ -3,7 +3,7 @@
 
 1. Clone the repository:
     ```bash
-    git clone https://github.com/nugrohoarr/portofolio-nugroho.git
+    git clone https://github.com/nugrohoarr/portofolio-v1.git
     ```
 2. Navigate to the project directory:
     ```bash
