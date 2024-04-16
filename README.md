@@ -7,7 +7,7 @@
     ```
 2. Navigate to the project directory:
     ```bash
-    cd DevPortfolio
+    cd portofolio-v1
     ```
 3. Install dependencies:
     ```bash
