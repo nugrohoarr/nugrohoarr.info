@@ -3,6 +3,7 @@ import { FaAws, FaGithub, FaGitlab, FaHtml5, FaLinux, } from "react-icons/fa";
 import { IoLogoCss3 } from "react-icons/io";
 import { DiMysql, DiNodejs, DiPostgresql, DiReact } from "react-icons/di";
 import { FaDocker } from "react-icons/fa";
+import { TbBrandGolang } from "react-icons/tb";
 
 
 export default function Skills() {
@@ -76,9 +77,9 @@ export default function Skills() {
                     </span>
                 </div>
                 <div className="relative group h-24 w-24 grid place-items-center rounded-md border active:bg-secondary md:hover:bg-secondary transition cursor-pointer hover:scale-95">
-                    <FaGitlab className="h-10 w-10" />
+                    <TbBrandGolang className="h-10 w-10" />
                     <span className="absolute opacity-0 group-hover:opacity-100 transition-opacity duration-300 ease-in-out text-xs mt-16">
-                        Gitlab
+                        Golang
                     </span>
                 </div>
                 <div className="relative group h-24 w-24 grid place-items-center rounded-md border active:bg-secondary md:hover:bg-secondary transition cursor-pointer hover:scale-95">
