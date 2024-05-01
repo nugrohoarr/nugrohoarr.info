@@ -5,6 +5,7 @@ import ProjectsSnip from './_components/ProjectsSnip'
 import Skills from './_components/Skills'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
+import Contact from './_components/Contact'
 
 export default function Home() {
   return (
@@ -30,9 +31,16 @@ export default function Home() {
         {/* <Project {...projects[3]} /> */}
       </div>
 
-      <div className='grid place-content-center mt-10'>
+      <div className='grid place-content-center mt-10 mb-10'>
         <Button asChild variant="secondary"><Link href="/projects">View All Projects</Link></Button>
       </div>
+
+      <div className="text-center ">
+        <h1 className="text-xl font-bold">Contact Me<span className="text-primary">.</span></h1>
+        <p className='text-xs'>Feel free to reach out to me with any <br /> questions about the project<span className="text-primary">.</span></p>
+      </div>
+
+      <Contact />
     </main>
   )
 }
