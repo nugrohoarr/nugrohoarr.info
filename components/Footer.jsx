@@ -5,7 +5,7 @@ import { ModeToggle } from "./ModeToggle";
 
 export default function Footer() {
     return (
-        <footer className="grid gap-3 md:px-20 lg:px-32 px-8 py-10">
+        <footer className="grid gap-3 -mt-10 md:px-20 lg:px-32 px-8 py-10">
             <div className="flex justify-between">
                 <div>
                     <Logo />

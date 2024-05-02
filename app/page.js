@@ -6,6 +6,7 @@ import Skills from './_components/Skills'
 import { Button } from '@/components/ui/button'
 import Link from 'next/link'
 import Contact from './_components/Contact'
+import { Certification } from './_components/Certification'
 
 export default function Home() {
   return (
@@ -31,16 +32,25 @@ export default function Home() {
         {/* <Project {...projects[3]} /> */}
       </div>
 
-      <div className='grid place-content-center mt-10 mb-10'>
+      <div className='grid place-content-center mt-10 mb-15'>
         <Button asChild variant="secondary"><Link href="/projects">View All Projects</Link></Button>
       </div>
 
-      <div className="text-center ">
+      <div className="text-center -mb-5 mt-20">
+        <h1 className="text-xl font-bold">Certifications<span className="text-primary">.</span></h1>
+        <p className='text-xs'>Have a look at the certifications that empower<br /> my professional journey.<span className="text-primary">.</span></p>
+      </div>
+
+      <Certification />
+
+      <div className="text-center mt-10">
         <h1 className="text-xl font-bold">Contact Me<span className="text-primary">.</span></h1>
         <p className='text-xs'>Feel free to reach out to me with any <br /> questions about the project<span className="text-primary">.</span></p>
       </div>
 
       <Contact />
+
+      
     </main>
   )
 }
