@@ -45,11 +45,11 @@ export default function Contact() {
         <div className="py-10 -mt-5 px-5">
             <form onSubmit={handleSubmit} className="max-w-md mx-auto grid gap-2 px-6 border-rounded py-2">
             <Label className="mt-3" htmlFor="name">Full Name</Label>
-                <Input onChange={handleChange} value={formState.name} autoComplete="off" name="name" id="name" type="text" placeholder="John Deo" />
+                <Input onChange={handleChange} value={formState.name} autoComplete="off" name="name" id="name" type="text" placeholder="John Deo" required={true} />
                 <Label className="mt-3" htmlFor="email">Email</Label>
-                <Input onChange={handleChange} value={formState.email} autoComplete="off" name="email" id="email" type="email" placeholder="john@deo.com" />
+                <Input onChange={handleChange} value={formState.email} autoComplete="off" name="email" id="email" type="email" placeholder="john@deo.com" required={true} />
                 <Label className="mt-3" htmlFor="message">Message</Label>
-                <Textarea onChange={handleChange} value={formState.message} autoComplete="off" name="message" id="message" placeholder="I wanna hire you.."></Textarea>
+                <Textarea onChange={handleChange} value={formState.message} autoComplete="off" name="message" id="message" placeholder="I wanna hire you.." required={true}></Textarea>
                 <Button className="mt-4" type="submit">Send</Button>
                 {resultMessage && (
                     <p className="mt-2 text-center text-xs">{resultMessage}</p>

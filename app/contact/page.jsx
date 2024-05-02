@@ -43,6 +43,10 @@ export default function Page() {
 
     return (
         <div className="py-20">
+            <div className="text-center mb-8">
+                <h1 className="text-2xl font-bold">Skills<span className="text-primary">.</span></h1>
+                <p className="text-xs">Some of my skills, i learnt in my journey of <br /> self thought coding<span className="text-primary">.</span></p>
+            </div>
             <form onSubmit={handleSubmit} className="max-w-md mx-auto grid gap-2 px-6">
             <Label className="mt-3" htmlFor="name">Full Name</Label>
                 <Input onChange={handleChange} value={formState.name} autoComplete="off" name="name" id="name" type="text" placeholder="John Deo" />
