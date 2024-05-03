@@ -41,7 +41,7 @@ export default function Header() {
                 <Button asChild>
                     <Link href="/contact">Contact Me</Link>
                 </Button>
-                {/* <ModeToggle /> */}
+                <ModeToggle />
             </div>
         </header>
     )
