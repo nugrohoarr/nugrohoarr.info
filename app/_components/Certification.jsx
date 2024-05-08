@@ -38,14 +38,17 @@ export function Certification() {
   };
 
   return (
-    <div className="relative grid place-content-center py-12 px-4 sm:py-12 sm:px-6">
-      <div className="flex flex-wrap justify-center items-center gap-4">
+    <div className="container mx-auto py-12 px-4 sm:px-6 lg:px-8">
+      <div className="flex flex-wrap justify-center gap-2">
         {currentItems.map((item, index) => (
-          <Card key={index} className="border bg-background dark:bg-secondary w-60 md:w-86"> {/* Adjusted width for smaller cards */}
-            <CardContent className="flex flex-col items-center justify-center p-1 sm:p-3"> {/* Reduced padding */}
-              <img src={item.image} alt={item.title} className="w-3/4 sm:w-full h-auto mb-2"/>
-              <p className="text-xs text-center">{item.description}</p>
-              <a href={item.credential || "/"} target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-primary mt-5">
+          <Card key={index} className="bg-white dark:bg-gray-800 border shadow-md hover:shadow-lg transition-shadow duration-300 rounded-lg" style={{ width: '280px' }}>
+            <CardContent className="flex flex-col items-center p-4">
+              <img src={item.image} alt={item.title} className="w-full h-40  rounded-t-lg"/>
+              <div className="text-center mt-3">
+                <h3 className="text-sm font-semibold">{item.title}</h3>
+                <p className="text-xs text-gray-600 dark:text-gray-400">{item.description}</p>
+              </div>
+              <a href={item.credential || "/"} target="_blank" rel="noopener noreferrer" className="mt-4 inline-block text-primary text-sm">
                 View Credential
               </a>
             </CardContent>

@@ -1,43 +1,40 @@
 "use client";
 import { Button } from "@/components/ui/button";
 import Project from "./Project";
-import { useState } from "react";
 import { projects } from "@/lib/projects";
+import { useState, useEffect } from "react";
+
+// Mock project data based on your provided structure
 
 export default function ProjectsSnip() {
+    const [selectedTech, setSelectedTech] = useState("");
+    const [filteredProjects, setFilteredProjects] = useState(projects);
 
-    const [cate, setCate] = useState("");
-    const [filters, setFilters] = useState([]);
-
-    const handleFilter = (e) => {
-        setCate(e.target.innerText);
-        filters.length = 0;
-        for (let i = 0; i < projects.length; i++) {
-            if (e.target.innerText == projects[i].cate) {
-                filters.push(projects[i]);
-            }
+    const handleFilter = (tech) => {
+        setSelectedTech(tech);
+        if (tech) {
+            setFilteredProjects(projects.filter(project => project.techs.includes(tech)));
+        } else {
+            setFilteredProjects(projects);
         }
     };
 
     return (
         <div className="md:px-20 lg:px-32 px-5">
             <div className="flex flex-wrap gap-2 mb-6 px-6 items-center justify-center">
-                <Button onClick={handleFilter} variant={cate != "expressjs" ? "secondary" : ""} size="sm" className="rounded-full text-xs">expressjs</Button>
-                <Button onClick={handleFilter} variant={cate != "nestjs" ? "secondary" : ""} size="sm" className="rounded-full text-xs">nestjs</Button>
-                <Button onClick={handleFilter} variant={cate != "google cloud platform" ? "secondary" : ""} size="sm" className="rounded-full text-xs">google cloud platform</Button>
-                <Button onClick={handleFilter} variant={cate != "reactjs" ? "secondary" : ""} size="sm" className="rounded-full text-xs">reactjs</Button>
+                {["Express.js", "Nest.js", "GCP", "Flask", "PostgreSQL", "Docker"].map((tech) => (
+                    <Button key={tech} onClick={() => handleFilter(tech)}
+                            variant={selectedTech !== tech ? "secondary" : ""}
+                            size="sm" className="rounded-full text-xs">
+                        {tech}
+                    </Button>
+                ))}
             </div>
             <div className='flex flex-wrap mb-10 gap-5 items-center justify-center'>
-                {!cate ?
-                    projects.map((project, index) => (
-                        <Project key={index} {...project} />
-                    ))
-                    :
-                    filters.map((project, index) => (
-                        <Project key={index} {...project} />
-                    ))
-                }
+                {filteredProjects.map((project, index) => (
+                    <Project key={index} {...project} />
+                ))}
             </div>
         </div>
-    )
+    );
 }
