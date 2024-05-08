@@ -3,6 +3,7 @@
 @tailwind utilities;
  
 
+
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -50,7 +51,20 @@
   }
 }
 
- 
+@media (max-width: 600px) {
+  .card-mobile-small {
+    max-width: 300px; /* Smaller width for mobile */
+    margin: 0 auto; /* Center the card */
+    padding: 10px; /* Reduced padding */
+  }
+  .img-mobile-small {
+    width: 100%; /* Full width within the card */
+    max-width: 280px; /* Limiting image size */
+    height: auto; /* Maintain aspect ratio */
+  }
+}
+
+
 @layer base {
   * {
     @apply border-border;
