@@ -1,48 +1,76 @@
-import * as React from "react"
+
+"use client";
+import * as React from "react";
+import { useState } from "react";
 import { certicate } from "@/lib/certificates";
-import { Link } from "next/link";
-import { ArrowUpRight } from "lucide-react";
-
-
-import { Card, CardContent } from "@/components/ui/card"
+import { Card, CardContent } from "@/components/ui/card";
 import {
-  Carousel,
-  CarouselContent,
-  CarouselItem,
-  CarouselNext,
-  CarouselPrevious,
-} from "@/components/ui/carousel"
+  Pagination,
+  PaginationContent,
+  PaginationItem,
+  PaginationLink,
+  PaginationNext,
+  PaginationPrevious
+} from "@/components/ui/pagination";
+
 
 export function Certification() {
+  const itemsPerPage = 3;
+  const [currentPage, setCurrentPage] = React.useState(1);
+  const totalPages = Math.ceil(certicate.length / itemsPerPage);
+
+  const startIndex = (currentPage - 1) * itemsPerPage;
+  const endIndex = startIndex + itemsPerPage;
+  const currentItems = certicate.slice(startIndex, endIndex);
+
+  // Handler for previous button
+  const handlePrevious = () => {
+    if (currentPage > 1) {
+      setCurrentPage(currentPage - 1);
+    }
+  };
+
+  // Handler for next button
+  const handleNext = () => {
+    if (currentPage < totalPages) {
+      setCurrentPage(currentPage + 1);
+    }
+  };
+
   return (
     <div className="relative grid place-content-center py-12 px-4 sm:py-12 sm:px-6">
-      <Carousel
-        opts={{
-          align: "start",
-        }}
-        className="flex gap-2 sm:gap-3 flex-wrap items-center justify-center rounded-md max-w-3xl mx-auto relative"
-      >
-        <CarouselContent>
-          {certicate.map((item, index) => (
-            <CarouselItem key={index} className="basis-full sm:basis-1/2 lg:basis-1/3 p-1">
-              <Card className="border bg-background dark:bg-secondary card-mobile-small">
-                <CardContent className="flex flex-col items-center justify-center p-2 sm:p-5">
-                  <img src={item.image} alt={item.title} className="w-3/4 sm:w-full max-w-xs h-auto mb-2 img-mobile-small"/>
-                  <p className="text-xs text-center">{item.description}</p>
-                  <p className="text-xs sm:text-sm text-primary mt-5">
-                    <a href={item.credential || "/"} target="_blank" rel="noopener noreferrer">Credential</a>
-                  </p>
-                </CardContent>
-              </Card>
-            </CarouselItem>
+      <div className="flex flex-wrap justify-center items-center gap-4">
+        {currentItems.map((item, index) => (
+          <Card key={index} className="border bg-background dark:bg-secondary w-60 md:w-86"> {/* Adjusted width for smaller cards */}
+            <CardContent className="flex flex-col items-center justify-center p-1 sm:p-3"> {/* Reduced padding */}
+              <img src={item.image} alt={item.title} className="w-3/4 sm:w-full h-auto mb-2"/>
+              <p className="text-xs text-center">{item.description}</p>
+              <a href={item.credential || "/"} target="_blank" rel="noopener noreferrer" className="text-xs sm:text-sm text-primary mt-5">
+                View Credential
+              </a>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+      <Pagination>
+        <PaginationContent className="mt-3">
+          <PaginationItem >
+            <PaginationPrevious onClick={handlePrevious} disabled={currentPage === 1} />
+          </PaginationItem>
+          {Array.from({ length: totalPages }, (_, i) => (
+            <PaginationItem key={i}>
+              <PaginationLink onClick={() => setCurrentPage(i + 1)} className={i + 1 === currentPage ? 'text-primary' : ''}>
+                {i + 1}
+              </PaginationLink>
+            </PaginationItem>
           ))}
-        </CarouselContent>
-        <CarouselPrevious className="CarouselPrevious" />
-        <CarouselNext className="CarouselNext" />
-      </Carousel>
+          <PaginationItem>
+            <PaginationNext onClick={handleNext} disabled={currentPage === totalPages} />
+          </PaginationItem>
+        </PaginationContent>
+      </Pagination>
     </div>
   );
 }
-
 
 

@@ -8,7 +8,7 @@ export default function Social() {
             <Link href="https://github.com/nugrohoarr" className="hover:text-primary"><GitHubLogoIcon className="h-5 w-5" /></Link>
             <Link href="https://www.linkedin.com/in/nugroho-ar/" className="hover:text-primary"><LinkedInLogoIcon className="h-5 w-5" /></Link>
             <Link href="https://www.instagram.com/nugroho.ar__/" className="hover:text-primary"><InstagramLogoIcon className="h-5 w-5" /></Link>
-            <Link href="mailto:mit.shuki23@gmail.com" className="hover:text-primary"><TbBrandGmail className="h-5 w-5" /></Link>
+            <Link href="mailto:tri.nugroho@students.utdi.ac.id" className="hover:text-primary"><TbBrandGmail className="h-5 w-5" /></Link>
         </div>
     )
 }
