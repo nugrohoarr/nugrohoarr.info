@@ -24,7 +24,7 @@ export default function Hero() {
                     <Link href="/">Explore</Link>
                 </Button>
                 <Button asChild className="flex gap-1 items-center justify-center">
-                    <Link href="https://github.com/nugrohoarr">My Resume</Link>
+                    <Link href="https://drive.google.com/file/d/1i-aQJv3Q6OPf9xU042tX6ZLeNgVeNgeZ/view?usp=sharing">My Resume</Link>
                 </Button>
             </div>
         </section>
