@@ -10,13 +10,13 @@ export default function Project({ title, alt, image, description, url, techs }) 
 
     return (
         <div className="relative border bg-background dark:bg-secondary rounded-lg shadow-base hover:shadow-xl transition-shadow duration-300 ease-in-out" 
-             style={{ width: '280px', height: '330px' }}> {/* Adjusted width and height */}
+             style={{ width: '280px', height: '330px' }}> 
             <div className="group cursor-pointer overflow-hidden">
-                <img className="w-full object-cover transform transition-all duration-500 ease-in-out group-hover:scale-105" 
-                     style={{ height: '180px' }} src={image} alt={alt} /> {/* Adjusted image height */}
+                <img className="w-full object-cover rounded-lg transform transition-all duration-500 ease-in-out group-hover:scale-105" 
+                     style={{ height: '180px' }} src={image} alt={alt} /> 
 
                 <div className="p-4">
-                    <Link href={url} passHref className="text-base font-bold text-gray-900 dark:text-white hover:text-primary">{title}</Link>
+                    <Link href={url} passHref className="text-base font-bold  hover:text-primary">{title}</Link>
                     <p className="text-gray-600 dark:text-gray-300 text-xs mt-1 mb-2">{truncateText(description, 100)}</p>
 
                     <div className="flex flex-wrap gap-2 mt-1 mb-4">
