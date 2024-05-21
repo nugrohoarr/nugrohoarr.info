@@ -8,10 +8,10 @@ export default function Hero() {
         <section className='relative grid place-content-center py-20 px-6'>
             <div className='md:max-w-2xl max-w-md text-center grid gap-1'>
                 <h1 className='md:text-4xl lg:text-5xl text-3xl font-bold'>
-                    Hi, I am <span className='underline underline-offset-4 text-primary'>Nugroho</span> a Backend Developer<span className='text-primary'>.</span>
+                    Hi, I am <span className='underline underline-offset-4 text-primary'>Nugroho</span> a Software Development<span className='text-primary'>.</span>
                 </h1>
                 <p className='text-[0.8rem] max-w-md mx-auto'>
-                A comprehensive showcase of my backend development skills, experiences, and projects, highlighting my expertise and dedication to the craft of coding.<span className='text-primary'>.</span>
+                A comprehensive showcase of my software development skills, experiences, and projects, highlighting my expertise and dedication to the craft of coding.<span className='text-primary'>.</span>
                 </p>
                 <div className="flex items-center justify-center gap-3 mt-4">
                     <Link href="https://github.com/nugrohoarr" className="hover:text-primary"><GitHubLogoIcon className="h-6 w-6" /></Link>
@@ -24,7 +24,7 @@ export default function Hero() {
                     <Link href="/">Explore</Link>
                 </Button>
                 <Button asChild className="flex gap-1 items-center justify-center">
-                    <Link href="https://drive.google.com/file/d/1i-aQJv3Q6OPf9xU042tX6ZLeNgVeNgeZ/view?usp=sharing">My Resume</Link>
+                    <Link href="https://drive.google.com/file/d/1u9GhlARyQFYjTA4aGre0cx1NHJsg3pLH/view?usp=sharing" >Download CV</Link>
                 </Button>
             </div>
         </section>
