@@ -13,7 +13,14 @@
     ```bash
     npm install
     ```
-4. Run the development server:
+4. Set up environment variables:
+    Create a `.env.local` file in the root directory and add:
+    ```bash
+    GROQ_API_KEY=your_groq_api_key_here
+    ```
+    Get your Groq API key from https://console.groq.com/
+
+5. Run the development server:
     ```bash
     npm run dev
     ```

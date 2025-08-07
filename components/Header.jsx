@@ -23,6 +23,7 @@ export default function Header() {
                     <li className="hover:underline underline-offset-4 hover:text-primary"><Link href="/">About</Link></li>
                     <li className="hover:underline underline-offset-4 hover:text-primary"><Link href="/skills">Skills</Link></li>
                     <li className="hover:underline underline-offset-4 hover:text-primary"><Link href="/projects">Projects</Link></li>
+                    <li className="hover:underline underline-offset-4 hover:text-primary"><Link href="/ask-me-anything">Ask Me Anything</Link></li>
                 </ul>
 
                 <DropdownMenu>
@@ -35,6 +36,7 @@ export default function Header() {
                         <Link href="/"><DropdownMenuItem>About</DropdownMenuItem></Link>
                         <Link href="/skills"><DropdownMenuItem>Skills</DropdownMenuItem></Link>
                         <Link href="/projects"><DropdownMenuItem>Projects</DropdownMenuItem></Link>
+                        <Link href="/ask-me-anything"><DropdownMenuItem>Ask Me Anything</DropdownMenuItem></Link>
                     </DropdownMenuContent>
                 </DropdownMenu>
 
